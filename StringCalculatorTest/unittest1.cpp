@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 
+#include "../StringCalculator/StringCalculator.h"
+
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringCalculatorTest
@@ -9,9 +11,10 @@ namespace StringCalculatorTest
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(DevuelveCeroTest)
 		{
 			// TODO: Your test code here
+			Assert::AreEqual(0, CStringCalculator::calc(""));
 		}
 
 	};
