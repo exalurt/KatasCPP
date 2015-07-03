@@ -11,7 +11,7 @@ namespace StringCalculatorTest
 	{
 	public:
 		
-		TEST_METHOD(DevuelveCeroTest)
+		TEST_METHOD(TestDevuelveCero)
 		{
 			// TODO: Your test code here
 			Assert::AreEqual(0, CStringCalculator::calc(""));
