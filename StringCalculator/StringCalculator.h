@@ -17,5 +17,5 @@ class STRINGCALCULATOR_API CStringCalculator {
 public:
 	static int calc(const std::string s);
 private:
-	static std::vector<int> split(const std::string &s);
+	static std::vector<int> splitToInt(const std::string &s);
 };

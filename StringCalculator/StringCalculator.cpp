@@ -8,7 +8,7 @@
 #include <vector>
 #include <sstream>
 
-std::vector<int> CStringCalculator::split(const std::string &s) {
+std::vector<int> CStringCalculator::splitToInt(const std::string &s) {
 	std::vector<int> elems;
 	std::stringstream ss { s };
 	std::string item;
@@ -20,7 +20,7 @@ std::vector<int> CStringCalculator::split(const std::string &s) {
 
 int CStringCalculator::calc(const std::string s)
 {
-	std::vector<int> x { split(s) };
+	std::vector<int> x{ splitToInt(s) };
 	int resultado { 0 };
 	for (int item : x)
 		resultado += item;

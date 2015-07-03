@@ -59,5 +59,15 @@ namespace StringCalculatorTest
 			Assert::AreEqual(69, CStringCalculator::calc("26,43"), L"☹");
 		}
 
+		BEGIN_TEST_METHOD_ATTRIBUTE(TestSumaCadenaDeNumeros)
+			TEST_OWNER(L"Santiago Suárez Díaz")
+			TEST_DESCRIPTION(L"Devuelve la suma de una cadena de números.")
+		END_TEST_METHOD_ATTRIBUTE()
+
+		TEST_METHOD(TestSumaCadenaDeNumeros)
+		{
+			Assert::AreEqual(10, CStringCalculator::calc("1,7,2"), L"☹");
+			Assert::AreEqual(100, CStringCalculator::calc("26,31,43"), L"☹");
+		}
 	};
 }
