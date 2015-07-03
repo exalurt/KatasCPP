@@ -4,24 +4,26 @@
 #include "stdafx.h"
 #include "StringCalculator.h"
 
+#include <string>
+#include <vector>
+#include <sstream>
 
-// This is an example of an exported variable
-STRINGCALCULATOR_API int nStringCalculator=0;
-
-// This is an example of an exported function.
-STRINGCALCULATOR_API int fnStringCalculator(void)
-{
-	return 42;
+std::vector<int> CStringCalculator::split(const std::string &s) {
+	std::vector<int> elems;
+	std::stringstream ss { s };
+	std::string item;
+	while (std::getline(ss, item, ',')) {
+		elems.push_back(atoi(item.c_str()));
+	}
+	return elems;
 }
 
-// This is the constructor of a class that has been exported.
-// see StringCalculator.h for the class definition
-CStringCalculator::CStringCalculator()
+int CStringCalculator::calc(const std::string s)
 {
-	return;
-}
+	std::vector<int> x { split(s) };
+	int resultado { 0 };
+	for (int item : x)
+		resultado += item;
 
-int CStringCalculator::calc(std::string)
-{
-	return 0;
+	return resultado;
 }

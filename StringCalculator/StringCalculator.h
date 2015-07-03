@@ -10,15 +10,12 @@
 #define STRINGCALCULATOR_API __declspec(dllimport)
 #endif
 #include <string>
+#include <vector>
 
 // This class is exported from the StringCalculator.dll
 class STRINGCALCULATOR_API CStringCalculator {
 public:
-	CStringCalculator(void);
-	// TODO: add your methods here.
-	static int calc(std::string s);
+	static int calc(const std::string s);
+private:
+	static std::vector<int> split(const std::string &s);
 };
-
-extern STRINGCALCULATOR_API int nStringCalculator;
-
-STRINGCALCULATOR_API int fnStringCalculator(void);
