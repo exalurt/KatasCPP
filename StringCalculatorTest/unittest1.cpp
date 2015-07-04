@@ -87,5 +87,14 @@ namespace StringCalculatorTest
 				CStringCalculator::calc("17,-2");
 			}, L"☹");
 		}
+
+		BEGIN_TEST_METHOD_ATTRIBUTE(TestIgnoraNumerosMayoresDe1000)
+			TEST_DESCRIPTION(L"Los números mayores de 1000 son ignorados.")
+		END_TEST_METHOD_ATTRIBUTE()
+
+		TEST_METHOD(TestIgnoraNumerosMayoresDe1000)
+		{
+			Assert::AreEqual(2, CStringCalculator::calc("2,1001"), L"☹");
+		}
 	};
 }

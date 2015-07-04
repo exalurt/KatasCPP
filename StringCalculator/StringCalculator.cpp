@@ -43,6 +43,7 @@ int CStringCalculator::calc(const string s)
 
 	for each (int item in elemens)
 	{
+		if (1000 < item) continue;
 		if (0 > item) throwError(elemens);
 		resultado += item;
 	}
