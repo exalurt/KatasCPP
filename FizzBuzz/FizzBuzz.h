@@ -9,14 +9,12 @@
 #else
 #define FIZZBUZZ_API __declspec(dllimport)
 #endif
+#include <string>
 
 // This class is exported from the FizzBuzz.dll
 class FIZZBUZZ_API CFizzBuzz {
 public:
 	CFizzBuzz(void);
 	// TODO: add your methods here.
+	static std::string FizzBuzz(const int num);
 };
-
-extern FIZZBUZZ_API int nFizzBuzz;
-
-FIZZBUZZ_API int fnFizzBuzz(void);

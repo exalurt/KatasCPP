@@ -3,20 +3,26 @@
 
 #include "stdafx.h"
 #include "FizzBuzz.h"
+#include <string>
+using namespace std;
 
-
-// This is an example of an exported variable
-FIZZBUZZ_API int nFizzBuzz=0;
-
-// This is an example of an exported function.
-FIZZBUZZ_API int fnFizzBuzz(void)
+string divisible3(const int num)
 {
-	return 42;
+	if (0 == num % 3 || string::npos != to_string(num).find("3"))
+		return string{ "Fizz" };
+	return "";
 }
 
-// This is the constructor of a class that has been exported.
-// see FizzBuzz.h for the class definition
-CFizzBuzz::CFizzBuzz()
+string divisible5(const int num)
 {
-	return;
+	if (0 == num % 5 || string::npos != to_string(num).find("5"))
+		return string{ "Buzz" };
+	return "";
+}
+
+string CFizzBuzz::FizzBuzz(const int num)
+{
+	string result = divisible3(num) + divisible5(num);
+
+	return (0 != result.length() ? result : to_string(num));
 }
