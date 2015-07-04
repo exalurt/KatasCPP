@@ -21,4 +21,5 @@ public:
 	static int calc(const std::string s);
 private:
 	static std::vector<int> splitToInt(const std::string &s);
+	static void CStringCalculator::throwError(const std::vector<int> &v);
 };

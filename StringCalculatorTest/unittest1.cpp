@@ -24,7 +24,7 @@ namespace StringCalculatorTest
 
 		BEGIN_TEST_CLASS_ATTRIBUTE()
 			TEST_CLASS_ATTRIBUTE(L"Owner", L"Santiago Suárez Díaz")
-			TEST_CLASS_ATTRIBUTE(L"Descrioption", L"String Calculator")
+			TEST_CLASS_ATTRIBUTE(L"Description", L"String Calculator")
 		END_TEST_CLASS_ATTRIBUTE()
 		
 		BEGIN_TEST_METHOD_ATTRIBUTE(TestDevuelveCero)
@@ -69,11 +69,23 @@ namespace StringCalculatorTest
 
 		BEGIN_TEST_METHOD_ATTRIBUTE(TestSumaCadenaDeNumerosSaltoDeLinea)
 			TEST_DESCRIPTION(L"Devuelve la suma de una cadena de números con salto de línea.")
-			END_TEST_METHOD_ATTRIBUTE()
+		END_TEST_METHOD_ATTRIBUTE()
 
-			TEST_METHOD(TestSumaCadenaDeNumerosSaltoDeLinea)
+		TEST_METHOD(TestSumaCadenaDeNumerosSaltoDeLinea)
 		{
 			Assert::AreEqual(10, CStringCalculator::calc("1\n7,2"), L"☹");
+		}
+
+		BEGIN_TEST_METHOD_ATTRIBUTE(TestNumerosNegativosNoSoportados)
+			TEST_DESCRIPTION(L"Lanza una excepción cuando recibe algún número negativo.")
+		END_TEST_METHOD_ATTRIBUTE()
+
+		TEST_METHOD(TestNumerosNegativosNoSoportados)
+		{
+			Assert::ExpectException<std::exception>([]()
+			{
+				CStringCalculator::calc("17,-2");
+			}, L"☹");
 		}
 	};
 }
