@@ -7,14 +7,45 @@
 #include <string>
 #include <vector>
 #include <sstream>
-#include <regex>
 #include <iostream>
 
 using namespace std;
 
-vector<int> CStringCalculator::splitToInt(const string &s) {
-	regex			expr{ STRING_REGEX };
-	stringstream	ss{ regex_replace(s, expr, ":") };
+string subString(const string &s, const string &separator)
+{
+	std::string result = s;
+	while (result.find(separator) != std::string::npos)
+		result.replace(result.find(separator), separator.length(), ":");
+	return result;
+}
+
+vector<string> getSeparators(const string &s)
+{
+	if (s[0] != '/')
+		return vector<string> { ",", "\n" };
+	return vector<string> { string{ s[2] } };
+}
+
+string getString(const string &s)
+{
+	if ('/' == s[0])
+		return s.substr(4);
+	return s;
+}
+
+string fixString(const string &s)
+{
+	string result = getString(s);
+	vector<string> separators{ getSeparators(s) };
+
+	for each (string separator in separators)
+		result = subString(result, separator);
+
+	return result;
+}
+
+vector<int> splitToInt(const string &s) {
+	stringstream	ss{ fixString(s) };
 	vector<int>		elems;
 	string			item;
 
@@ -25,7 +56,7 @@ vector<int> CStringCalculator::splitToInt(const string &s) {
 	return elems;
 }
 
-void CStringCalculator::throwError(const vector<int> &v)
+void throwError(const vector<int> &v)
 {
 	string error{ "Números negativos no soportados" };
 	for each (int item in v)

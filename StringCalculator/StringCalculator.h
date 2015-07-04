@@ -12,14 +12,14 @@
 #endif
 #include <string>
 #include <vector>
+#include <regex>
 
 #define STRING_REGEX ",|\n"
+#define NEW_DELIMITER "//\[.*\]\n"
 
 // This class is exported from the StringCalculator.dll
 class STRINGCALCULATOR_API CStringCalculator {
 public:
 	static int calc(const std::string s);
 private:
-	static std::vector<int> splitToInt(const std::string &s);
-	static void CStringCalculator::throwError(const std::vector<int> &v);
 };
