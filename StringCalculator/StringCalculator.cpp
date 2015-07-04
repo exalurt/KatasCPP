@@ -25,11 +25,19 @@ vector<string> getSeparators(const string &s)
 {
 	if (s[0] != '/') return vector<string> { ",", "\n" };
 	if (s[2] != '[') return vector<string> { string{ s[2] } };
-	string result;
-	int i = 3;
-	while (']' != s[i])
-		result.push_back(s[i++]);
-	return vector<string> { result };
+
+	vector<string> result;
+	int i = 2;
+	while ('\n' != s[i] && i < s.length())
+	{
+		i++;
+		string delimiter;
+		while (']' != s[i])
+			delimiter.push_back(s[i++]);
+		result.push_back(delimiter);
+		i++;
+	}
+	return result;
 }
 
 string getString(const string &s)

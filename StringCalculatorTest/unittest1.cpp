@@ -111,12 +111,30 @@ namespace StringCalculatorTest
 		}
 
 		BEGIN_TEST_METHOD_ATTRIBUTE(TestDelimitadorDeCualquierLongitud)
-			TEST_DESCRIPTION(L"Los números mayores de 1000 son ignorados.")
+			TEST_DESCRIPTION(L"Permite cualquier longitud de delimitador.")
 		END_TEST_METHOD_ATTRIBUTE()
 
 		TEST_METHOD(TestDelimitadorDeCualquierLongitud)
 		{
 			Assert::AreEqual(6, CStringCalculator::calc("//[***]\n1***2***3"), L"☹");
+		}
+
+		BEGIN_TEST_METHOD_ATTRIBUTE(TestMultiplesDelimitadores)
+			TEST_DESCRIPTION(L"Permite multiples delimitadores.")
+		END_TEST_METHOD_ATTRIBUTE()
+
+		TEST_METHOD(TestMultiplesDelimitadores)
+		{
+			Assert::AreEqual(6, CStringCalculator::calc("//[*][%]\n1*2%3"), L"☹");
+		}
+
+		BEGIN_TEST_METHOD_ATTRIBUTE(TestMultiplesDelimitadoresLongitudVariable)
+			TEST_DESCRIPTION(L"Permite multiples delimitadores de longitub variable.")
+		END_TEST_METHOD_ATTRIBUTE()
+
+		TEST_METHOD(TestMultiplesDelimitadoresLongitudVariable)
+		{
+			Assert::AreEqual(6, CStringCalculator::calc("//[* *][%&&&&]\n1%&&&&2* *3"), L"☹");
 		}
 	};
 }

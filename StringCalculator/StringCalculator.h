@@ -11,8 +11,7 @@
 #define STRINGCALCULATOR_API __declspec(dllimport)
 #endif
 #include <string>
-#include <vector>
-#include <regex>
+
 
 #define STRING_REGEX ",|\n"
 #define NEW_DELIMITER "//\[.*\]\n"
