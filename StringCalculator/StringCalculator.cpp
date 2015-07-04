@@ -14,22 +14,28 @@ using namespace std;
 string subString(const string &s, const string &separator)
 {
 	std::string result = s;
-	while (result.find(separator) != std::string::npos)
-		result.replace(result.find(separator), separator.length(), ":");
+	if (":" != separator)
+		while (result.find(separator) != std::string::npos)
+			result.replace(result.find(separator), separator.length(), ":");
+
 	return result;
 }
 
 vector<string> getSeparators(const string &s)
 {
-	if (s[0] != '/')
-		return vector<string> { ",", "\n" };
-	return vector<string> { string{ s[2] } };
+	if (s[0] != '/') return vector<string> { ",", "\n" };
+	if (s[2] != '[') return vector<string> { string{ s[2] } };
+	string result;
+	int i = 3;
+	while (']' != s[i])
+		result.push_back(s[i++]);
+	return vector<string> { result };
 }
 
 string getString(const string &s)
 {
 	if ('/' == s[0])
-		return s.substr(4);
+		return s.substr(s.find("\n") + 1);
 	return s;
 }
 
