@@ -33,7 +33,8 @@ Enunciado paso a paso
     * Soporta diferentes delimitadores:
         - Para cambiar un delimitador, el comienzo del string debe contener una línea
 		  separada que sea como esta: "//[delimitador]\n[números...]".
-		  Por ejemplo: "//;\n1;2" debe dar como resultado 3 donde el delimitador por defecto es ";".
+		  Por ejemplo: "//;\n1;2" debe dar como resultado 3 donde el delimitador
+		  por defecto es ";".
 
         - La primera línea es opcional. Todos los escenarios existentes hasta ahora,
 		  deben estar soportados.
@@ -42,7 +43,8 @@ Enunciado paso a paso
 	  "negativos no soportados" y el número negativo que ha sido pasado. Si hay múltiples
 	   números negativos, muestra todos ellos en el mensaje de la excepción.
 
-    * Los numeros mayores de 1000 deben ser ignorados. Por ejemplo "2,1001" dará como resultado 2.
+    * Los numeros mayores de 1000 deben ser ignorados. Por ejemplo "2,1001" dará como
+	  resultado 2.
 
     * Los delimitadores pueden ser de cualquier longitud con el siguiente formato:
 	  "//[delimiter]\n". Por ejemplo: "//[***]\n1***2***3" debe dar como resultado 6.

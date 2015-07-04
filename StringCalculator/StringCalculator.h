@@ -4,6 +4,7 @@
 // that uses this DLL. This way any other project whose source files include this file see 
 // STRINGCALCULATOR_API functions as being imported from a DLL, whereas this DLL sees symbols
 // defined with this macro as being exported.
+
 #ifdef STRINGCALCULATOR_EXPORTS
 #define STRINGCALCULATOR_API __declspec(dllexport)
 #else
@@ -11,6 +12,8 @@
 #endif
 #include <string>
 #include <vector>
+
+#define STRING_REGEX ",|\n"
 
 // This class is exported from the StringCalculator.dll
 class STRINGCALCULATOR_API CStringCalculator {
