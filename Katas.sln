@@ -7,6 +7,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringCalculatorTest", "Str
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringCalculator", "StringCalculator\StringCalculator.vcxproj", "{05CC11DE-D037-462C-AB4D-B47FCF48BAA4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FizzBuzz", "FizzBuzz\FizzBuzz.vcxproj", "{953D3346-1E2C-4521-BFD9-BD71E1B430A4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FizzBuzzTest", "FizzBuzzTest\FizzBuzzTest.vcxproj", "{E7F4D526-F68D-495E-ADD1-A649BC7159BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +25,14 @@ Global
 		{05CC11DE-D037-462C-AB4D-B47FCF48BAA4}.Debug|Win32.Build.0 = Debug|Win32
 		{05CC11DE-D037-462C-AB4D-B47FCF48BAA4}.Release|Win32.ActiveCfg = Release|Win32
 		{05CC11DE-D037-462C-AB4D-B47FCF48BAA4}.Release|Win32.Build.0 = Release|Win32
+		{953D3346-1E2C-4521-BFD9-BD71E1B430A4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{953D3346-1E2C-4521-BFD9-BD71E1B430A4}.Debug|Win32.Build.0 = Debug|Win32
+		{953D3346-1E2C-4521-BFD9-BD71E1B430A4}.Release|Win32.ActiveCfg = Release|Win32
+		{953D3346-1E2C-4521-BFD9-BD71E1B430A4}.Release|Win32.Build.0 = Release|Win32
+		{E7F4D526-F68D-495E-ADD1-A649BC7159BC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E7F4D526-F68D-495E-ADD1-A649BC7159BC}.Debug|Win32.Build.0 = Debug|Win32
+		{E7F4D526-F68D-495E-ADD1-A649BC7159BC}.Release|Win32.ActiveCfg = Release|Win32
+		{E7F4D526-F68D-495E-ADD1-A649BC7159BC}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
