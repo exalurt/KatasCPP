@@ -28,6 +28,9 @@
     <ClInclude Include="FizzBuzz.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CodeNum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
