@@ -4,45 +4,53 @@
 #include "stdafx.h"
 #include "FizzBuzz.h"
 #include <string>
+#include <vector>
+
 using namespace std;
 
-bool contain(string value, int num)
-{
-	return string::npos != to_string(num).find(value);
-}
+class CodeNum{
+	int num;
+	string value;
 
-bool isDivisible(int divisor, int num)
-{
-	return (0 == num % divisor);
-}
+	bool contain(const int num)
+	{
+		return string::npos != to_string(num).find(to_string(this->num));
+	};
 
-bool isBuzz(int num)
-{
-	return isDivisible(5, num) || contain("5", num);
-}
+	bool isDivisible(const int num)
+	{
+		return (0 == num % this->num);
+	};
 
-bool isFizz(int num)
-{
-	return isDivisible(3, num) || contain("3", num);
-}
+	bool is(const int num)
+	{
+		return isDivisible(num) || contain(num);
+	};
 
-string Fizz(const int num)
-{
-	if (isFizz(num))
-		return string{ "Fizz" };
-	return "";
-}
+public:
+	CodeNum(int num, string value)
+	{
+		this->num = num;
+		this->value = value;
+	};
 
-string Buzz(const int num)
-{
-	if (isBuzz(num))
-		return string{ "Buzz" };
-	return "";
-}
+	string execute(const int num)
+	{
+		if (is(num))
+			return value;
+		return "";
+	};
+};
 
 string CFizzBuzz::FizzBuzz(const int num)
 {
-	string result = Fizz(num) + Buzz(num);
+	string result;
+	vector<CodeNum> list{
+		{ 3, "Fizz" },
+		{ 5, "Buzz" } };
+
+	for (auto x : list)
+		result += x.execute(num);
 
 	return result.empty() ? to_string(num) : result;
 }
